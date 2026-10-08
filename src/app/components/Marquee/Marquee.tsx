@@ -40,7 +40,7 @@ const Marquee = () => {
 
     if (loading) {
         return (
-            <div className="sticky top-0 z-50 border-y border-gray-200 bg-white py-3 shadow-sm">
+            <div className="sticky top-0 z-50 border-y container mx-auto border-gray-200 bg-white py-3 shadow-sm">
                 <div className="container mx-auto px-4">
                     <div className="flex animate-pulse items-center gap-8 overflow-hidden">
                         {Array.from({ length: 5 }).map((_, i) => (

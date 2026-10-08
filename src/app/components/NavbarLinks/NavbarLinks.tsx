@@ -5,11 +5,11 @@ import { useEffect, useState } from "react";
 
 export interface Icategory {
     id: number;
-    slug:string;
+    slug: string;
     nameBn: string;
     today: number;
     unit: string;
-    icon:string;
+    icon: string;
     image: string;
     categoryIcon: string;
     change?: {
@@ -41,7 +41,7 @@ const NavbarLinks = () => {
 
     if (loading) {
         return (
-            <div className="sticky top-0 z-50 border-y border-gray-200 bg-white py-3 shadow-sm">
+            <div className=" border-y border-gray-200 bg-white py-3 shadow-sm">
                 <div className="container mx-auto px-4">
                     <div className="flex animate-pulse items-center gap-8 overflow-hidden">
                         {Array.from({ length: 5 }).map((_, i) => (
@@ -65,7 +65,7 @@ const NavbarLinks = () => {
     }
 
     return (
-        <div className="ml-16 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex w-full  items-center gap-4 bg-white py-2 text-sm font-medium text-gray-700 shadow-sm sm:gap-6 sm:py-3 sm:text-base">
                 <Link href="/" className="transition hover:text-red-600">
                     হোম
