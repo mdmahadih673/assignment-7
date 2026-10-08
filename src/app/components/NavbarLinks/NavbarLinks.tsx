@@ -4,10 +4,18 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export interface Icategory {
-    id: string;
-    slug: string;
+    id: number;
+    slug:string;
     nameBn: string;
-    icon: string
+    today: number;
+    unit: string;
+    icon:string;
+    image: string;
+    categoryIcon: string;
+    change?: {
+        dir: "up" | "down" | "flat";
+        pct: number;
+    };
 }
 
 const NavbarLinks = () => {
