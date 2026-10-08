@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Marquee from "./components/Marquee/Marquee";
 import HeaderPage from "./components/header-Page/HeaderPage";
+import Footer from "./components/Footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <HeaderPage />
         <Marquee />
         {children}
+        <Footer />
       </body>
     </html>
   );
