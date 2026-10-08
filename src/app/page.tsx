@@ -1,10 +1,10 @@
-import HeaderPage from "./components/header-Page/HeaderPage";
+import HeroSectionPage from "./components/hero/HeroSection";
 
 export default function Home() {
   return (
     <div >
-      <HeaderPage />
       
+      <HeroSectionPage />
     </div>
   );
 }
