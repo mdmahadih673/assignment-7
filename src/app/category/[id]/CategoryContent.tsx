@@ -1,0 +1,72 @@
+// app/category/[id]/CategoryContent.tsx
+import { Iproduct } from "@/app/components/Marquee/Marquee";
+import CategoryGrid from "./CategoryGrid";
+import Link from "next/link";
+
+export default async function CategoryContent({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id: slug } = await params;
+
+  const url = `https://api.abcz.workers.dev/api/bazardor/products?category=${slug}`;
+  const res = await fetch(url, { cache: "no-store" });
+
+  if (!res.ok) {
+    return (
+      <p className="text-center text-red-500 py-8">ডেটা আনতে সমস্যা হয়েছে</p>
+    );
+  }
+
+  const data = await res.json();
+  const categoryData: Iproduct[] = Array.isArray(data) ? data : [];
+
+  if (categoryData.length === 0) {
+    return (
+      <div className="py-8 text-center text-gray-500">
+        <p>কোনো পণ্য পাওয়া যায়নি</p>
+        <p className="mt-2 text-sm text-gray-400">Category: {slug}</p>
+      </div>
+    );
+  }
+
+  const category = categoryData[0] as Iproduct & {
+    categoryNameBn?: string;
+    categoryIcon?: string;
+  };
+  const categoryName = category.categoryNameBn || slug;
+  const categoryIcon = category.categoryIcon || "🛒";
+
+  return (
+    <div>
+      <div className="container mx-auto px-4 py-8 space-y-6">
+        <nav className="text-sm text-gray-500 flex items-center gap-2">
+          <Link href="/" className="hover:text-green-700">
+            হোম
+          </Link>
+          <span>›</span>
+        </nav>
+
+        {/* ১. ক্যাটাগরি হেডার কার্ড */}
+        <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
+          <div className="flex items-center gap-4">
+            <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gray-50 text-3xl">
+              {categoryIcon}
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900">
+                {categoryName}
+              </h1>
+              <p className="text-sm text-gray-500">
+                {categoryData.length} টি পণ্যের আজকের দাম ও পরিবর্তন
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <CategoryGrid products={categoryData} />
+      </div>
+    </div>
+  );
+}
