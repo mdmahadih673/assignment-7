@@ -52,8 +52,8 @@ const ProductDetails = async ({
   return (
     <div className="container mx-auto px-4 py-8 space-y-6 bg-gray-50 min-h-screen">
       
-      <nav className="text-sm text-gray-500 flex items-center gap-2">
-        <Link href="/" className="hover:text-green-700">
+      <nav className="text-sm text-gray-500 flex flex-wrap items-center gap-2">
+        <Link href="/" className="hover:text-green-700 whitespace-nowrap">
           হোম
         </Link>
         <span>›</span>
@@ -68,13 +68,13 @@ const ProductDetails = async ({
       </nav>
 
       
-      <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div className="rounded-2xl border border-gray-100 bg-white p-4 sm:p-6 shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div className="flex items-center gap-4">
           <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gray-50 text-4xl">
             {product.image || product.categoryIcon}
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">
+            <h1 className="text-xl sm:text-2xl font-bold text-gray-900">
               {product.nameBn}
             </h1>
             <p className="text-sm text-gray-500">
@@ -85,7 +85,7 @@ const ProductDetails = async ({
 
         <div className="text-left sm:text-right">
           <p className="text-xs text-gray-500 mb-1">আজকের দাম</p>
-          <p className="text-3xl font-bold text-gray-900">
+          <p className="text-2xl sm:text-3xl font-bold text-gray-900">
             {product.today}{" "}
             <span className="text-lg font-medium">টাকা / {product.unit}</span>
           </p>
@@ -106,7 +106,7 @@ const ProductDetails = async ({
       </div>
 
      
-      <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+      <div className="rounded-2xl border border-gray-100 bg-white p-4 sm:p-6 shadow-sm">
         <h2 className="text-lg font-bold text-gray-800 mb-4">
           দামের সারসংক্ষেপ
         </h2>
@@ -146,12 +146,12 @@ const ProductDetails = async ({
       </div>
 
       
-      <div className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+      <div className="rounded-2xl border border-gray-100 bg-white p-4 sm:p-6 shadow-sm">
         <h2 className="text-lg font-bold text-gray-800 mb-4">
           বাজারভিত্তিক আজকের দাম
         </h2>
-        <div className="overflow-x-auto">
-          <table className="w-full text-left">
+        <div className="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
+          <table className="w-full text-left whitespace-nowrap">
             <thead>
               <tr className="border-b border-gray-200 text-xs text-gray-500 uppercase">
                 <th className="pb-3 font-medium">বাজার</th>

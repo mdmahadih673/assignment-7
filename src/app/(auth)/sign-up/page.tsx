@@ -152,7 +152,7 @@ export default function SignUpPage() {
                         </div>
 
                          
-                        <div className="grid grid-cols-2 gap-3">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <Button
                                 type="button"
                                 className="flex h-[54px] items-center justify-center gap-2 rounded-xl border border-[#e0e6e1] bg-[#fbfdfb] px-2 text-[15px] font-semibold text-[#1c2a1f] shadow-none transition hover:bg-white"

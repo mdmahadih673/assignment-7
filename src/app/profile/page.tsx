@@ -45,31 +45,31 @@ const ProfilePage = () => {
                 আপনার অ্যাকাউন্টের তথ্য এখানে দেখুন।
             </p>
 
-            <div className="mt-6 flex items-center justify-between gap-4 rounded-3xl border border-[#e2e8e3] bg-[#fafcfa] p-6">
-                <div className="flex items-center gap-5">
+            <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 rounded-3xl border border-[#e2e8e3] bg-[#fafcfa] p-4 sm:p-6">
+                <div className="flex items-center gap-3 sm:gap-5">
                     {user.image ? (
                         <Image
                             src={user.image}
                             alt={user.name}
                             width={88}
                             height={88}
-                            className="size-[88px] rounded-2xl bg-[#eef1ee] object-cover"
+                            className="size-16 sm:size-[88px] rounded-2xl bg-[#eef1ee] object-cover"
                         />
                     ) : (
-                        <div className="flex size-[88px] items-center justify-center rounded-2xl bg-[#eef1ee] text-3xl font-bold text-[#058a3f]">
+                        <div className="flex size-16 sm:size-[88px] items-center justify-center rounded-2xl bg-[#eef1ee] text-2xl sm:text-3xl font-bold text-[#058a3f]">
                             {user.name?.charAt(0).toUpperCase()}
                         </div>
                     )}
-                    <div>
-                        <p className="text-xl font-medium text-[#1c2a1f]">{user.name}</p>
-                        <p className="mt-1 text-base text-[#5f6b62]">{user.email}</p>
+                    <div className="min-w-0">
+                        <p className="text-lg sm:text-xl font-medium text-[#1c2a1f] truncate">{user.name}</p>
+                        <p className="mt-1 text-sm sm:text-base text-[#5f6b62] truncate">{user.email}</p>
                     </div>
                 </div>
 
                 <Button
                     type="button"
                     onClick={handleSignOut}
-                    className="flex h-11 items-center gap-2 rounded-lg border border-[#d92020] bg-transparent px-5 text-sm font-semibold text-[#d92020] shadow-none transition hover:bg-red-50"
+                    className="flex h-11 w-full sm:w-auto items-center justify-center gap-2 rounded-lg border border-[#d92020] bg-transparent px-5 text-sm font-semibold text-[#d92020] shadow-none transition hover:bg-red-50"
                 >
                     <svg aria-hidden="true" className="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M9 14 4 9l5-5" />

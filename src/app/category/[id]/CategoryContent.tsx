@@ -48,8 +48,8 @@ export default async function CategoryContent({
   return (
     <div>
       <div className="container mx-auto px-4 py-8 space-y-6">
-        <nav className="text-sm text-gray-500 flex items-center gap-2">
-          <Link href="/" className="hover:text-green-700">
+        <nav className="text-sm text-gray-500 flex flex-wrap items-center gap-2">
+          <Link href="/" className="hover:text-green-700 whitespace-nowrap">
             হোম
           </Link>
           <span>›</span>
@@ -62,7 +62,7 @@ export default async function CategoryContent({
               {categoryIcon}
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">
+              <h1 className="text-xl sm:text-2xl font-bold text-gray-900">
                 {categoryName}
               </h1>
               <p className="text-sm text-gray-500">

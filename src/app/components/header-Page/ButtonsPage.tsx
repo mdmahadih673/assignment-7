@@ -31,9 +31,9 @@ const ButtonsPage = () => {
     return (
         <div className="ml-auto flex items-center gap-2 sm:gap-3">
             {user ? (
-                <div className='flex items-center  gap-2'>
-                    <Link href={'/profile'}  >
-                        <div className="flex justify-center  items-center gap-4">
+                <div className='flex items-center gap-2'>
+                    <Link href={'/profile'}>
+                        <div className="flex justify-center items-center gap-2 sm:gap-4">
                             <Avatar>
                                 <Avatar.Image
                                     alt='blue'
@@ -41,12 +41,10 @@ const ButtonsPage = () => {
                                 />
                                 <Avatar.Fallback>B</Avatar.Fallback>
                             </Avatar>
-
                         </div>
-                        {session?.user ? <span className="text-green-700 font-bold" >Welcome, {session.user.name}</span> : null}
+                        {session?.user ? <span className="text-green-700 font-bold hidden sm:inline text-sm">Welcome, {session.user.name}</span> : null}
                     </Link>
-                    <Button variant='danger' onClick={handleSignOut}>Sign out</Button>
-
+                    <Button variant='danger' onClick={handleSignOut} className="text-xs sm:text-sm px-2 sm:px-4">Sign out</Button>
                 </div>
             ) : (
                 <div>

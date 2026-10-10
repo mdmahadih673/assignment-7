@@ -24,7 +24,7 @@ const HeaderPage = () => {
     return (
         <header className="w-full border-b border-gray-200 bg-white shadow-sm ">
 
-            <div className="flex justify-between container mx-auto my-2">
+            <div className="flex justify-between container mx-auto px-4 my-2">
                 <div className="flex items-center gap-3">
                     <Link href={'/'} className="shrink-0">
                         <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-green-50">

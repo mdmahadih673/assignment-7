@@ -66,7 +66,7 @@ const NavbarLinks = () => {
 
     return (
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex w-full  items-center gap-4 bg-white py-2 text-sm font-medium text-gray-700 shadow-sm sm:gap-6 sm:py-3 sm:text-base">
+            <div className="flex w-full overflow-x-auto whitespace-nowrap items-center gap-4 bg-white py-2 text-sm font-medium text-gray-700 shadow-sm sm:gap-6 sm:py-3 sm:text-base [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
                 <Link href="/" className="transition hover:text-red-600">
                     হোম
                 </Link>
