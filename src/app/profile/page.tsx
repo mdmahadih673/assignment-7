@@ -45,14 +45,14 @@ const ProfilePage = () => {
                 আপনার অ্যাকাউন্টের তথ্য এখানে দেখুন।
             </p>
 
-
             <div className="mt-6 flex items-center justify-between gap-4 rounded-3xl border border-[#e2e8e3] bg-[#fafcfa] p-6">
                 <div className="flex items-center gap-5">
                     {user.image ? (
-
                         <Image
                             src={user.image}
                             alt={user.name}
+                            width={88}
+                            height={88}
                             className="size-[88px] rounded-2xl bg-[#eef1ee] object-cover"
                         />
                     ) : (
@@ -79,13 +79,12 @@ const ProfilePage = () => {
                 </Button>
             </div>
 
-
             <div className="mt-6 rounded-3xl border border-[#e2e8e3] bg-[#fafcfa] p-6">
-                <h2 className="text-lg font-semibold text-[#1c2a1f]">তথ্য</h2>
+                <h2 className="text-lg font-bold text-[#1c2a1f]">তথ্য</h2>
 
-                <Form className="mt-6 flex flex-col gap-4 px-6 pb-4" onSubmit={handleUpdate}>
+                <Form className="mt-6 flex flex-col gap-4 px-2 pb-2" onSubmit={handleUpdate}>
                     <TextField isRequired name="name" defaultValue={user.name}>
-                        <Label className="mb-2 block text-base font-medium text-[#1c2a1f]">
+                        <Label className="mb-2 block text-base font-bold text-[#1c2a1f]">
                             নাম
                         </Label>
                         <Input className="h-[46px] w-full rounded-xl border border-[#e0e6e1] bg-[#fbfdfb] px-4 text-base text-[#1c2a1f] shadow-none focus:border-[#058a3f] focus:outline-none focus:ring-2 focus:ring-[#058a3f]/20" />
@@ -95,7 +94,7 @@ const ProfilePage = () => {
                     <Button
                         type="submit"
                         isDisabled={saving}
-                        className="h-[46px] w-full rounded-xl bg-[#058a3f] text-base font-semibold text-white shadow-[0_4px_8px_rgba(5,138,63,0.3)] transition hover:bg-[#047a38]"
+                        className="h-[46px] w-full rounded-xl bg-[#0b8e36] text-base font-semibold text-white shadow-[0_4px_8px_rgba(11,142,54,0.3)] transition hover:bg-[#09752c]"
                     >
                         {saving ? "আপডেট হচ্ছে..." : "আপডেট"}
                     </Button>

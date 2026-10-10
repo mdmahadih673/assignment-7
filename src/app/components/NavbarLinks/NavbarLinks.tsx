@@ -5,11 +5,11 @@ import { useEffect, useState } from "react";
 
 export interface Icategory {
     id: number;
-    slug: string;
+    slug?: string;
     nameBn: string;
     today: number;
     unit: string;
-    icon: string;
+    icon?: string;
     image: string;
     categoryIcon: string;
     change?: {

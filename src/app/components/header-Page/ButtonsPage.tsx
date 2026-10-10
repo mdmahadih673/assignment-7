@@ -1,7 +1,7 @@
 "use client";
 
 import { signOut, useSession } from "@/lib/auth-client";
-import { Avatar, Spinner } from "@heroui/react";
+import { Avatar, Button, Spinner } from "@heroui/react";
 import Link from "next/link";
 import { toast } from "react-toastify";
 
@@ -45,7 +45,7 @@ const ButtonsPage = () => {
                         </div>
                         {session?.user ? <span className="text-green-700 font-bold" >Welcome, {session.user.name}</span> : null}
                     </Link>
-                    <button className='btn btn-error' onClick={handleSignOut}>Sign out</button>
+                    <Button variant='danger' onClick={handleSignOut}>Sign out</Button>
 
                 </div>
             ) : (
