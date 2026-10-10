@@ -49,7 +49,7 @@ const SignInPage = () => {
         
         <section className="w-full bg-[#f0f5f0] px-5 py-10">
             <div className="mx-auto w-full max-w-130">
-                {/* Header */}
+                
                 <div className="mb-6 text-center">
                     <h1 className="text-3xl font-bold tracking-tight text-[#1c2a1f]">
                         সাইন ইন
@@ -59,7 +59,7 @@ const SignInPage = () => {
                     </p>
                 </div>
 
-                {/* Card */}
+                 
                 <div className="rounded-3xl border border-[#e2e8e3] bg-[#fafcfa] p-6">
                     <Form className="flex flex-col gap-4" onSubmit={onSubmit}>
                         <TextField
@@ -95,7 +95,7 @@ const SignInPage = () => {
                             <FieldError className="mt-1 text-xs text-red-500" />
                         </TextField>
 
-                        {/* Primary button */}
+                         
                         <Button
                             type="submit"
                             className="h-13 w-full rounded-xl bg-[#058a3f] text-base font-semibold text-white shadow-[0_4px_8px_rgba(5,138,63,0.3)] transition hover:bg-[#047a38]"
@@ -103,14 +103,14 @@ const SignInPage = () => {
                             সাইন ইন
                         </Button>
 
-                        {/* Divider */}
+                        
                         <div className="flex items-center gap-4 text-sm text-[#2b3a2f]">
                             <span className="h-0.5 flex-1 bg-[#e2e8e3]" />
                             অথবা
                             <span className="h-0.5 flex-1 bg-[#e2e8e3]" />
                         </div>
 
-                        {/* Social buttons */}
+                         
                         <div className="grid grid-cols-2 gap-3">
                             <Button
                                 type="button"
@@ -147,7 +147,7 @@ const SignInPage = () => {
                     </Form>
                 </div>
 
-                {/* Back link */}
+                 
                 <p className="mt-8 text-center text-base text-[#7a857d]">
                     <Link href="/" className="hover:text-[#1c2a1f]">
                         ← হোম পেজে ফিরে যান

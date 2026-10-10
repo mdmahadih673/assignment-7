@@ -24,9 +24,16 @@ export default async function CategoryContent({
 
   if (categoryData.length === 0) {
     return (
-      <div className="py-8 text-center text-gray-500">
-        <p>কোনো পণ্য পাওয়া যায়নি</p>
-        <p className="mt-2 text-sm text-gray-400">Category: {slug}</p>
+      <div className="py-8 text-center text-gray-500 flex flex-col items-center">
+         
+        <p className="text-lg font-medium text-red-500 mb-2">কোনো পণ্য পাওয়া যায়নি</p>
+        <p className="mb-6 text-sm text-gray-400">Category: {slug}</p>
+        
+        <Link href="/">
+          <button className="bg-[#058a3f] hover:bg-[#047a38] transition text-white px-6 py-2 rounded-lg font-medium">
+            হোম পেজে ফিরে যান
+          </button>
+        </Link>
       </div>
     );
   }
@@ -48,7 +55,7 @@ export default async function CategoryContent({
           <span>›</span>
         </nav>
 
-        {/* ১. ক্যাটাগরি হেডার কার্ড */}
+         
         <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
           <div className="flex items-center gap-4">
             <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gray-50 text-3xl">

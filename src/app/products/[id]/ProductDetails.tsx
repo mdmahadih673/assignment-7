@@ -110,31 +110,39 @@ const ProductDetails = async ({
         <h2 className="text-lg font-bold text-gray-800 mb-4">
           দামের সারসংক্ষেপ
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="rounded-xl border border-gray-100 p-4">
-            <p className="text-xs text-gray-500 mb-1">গতকাল</p>
-            <p className="text-xl font-bold text-gray-900">
-              {product.yesterday} টাকা
-            </p>
-            <p className="text-xs text-gray-400 mt-1">আগের দিনের দাম</p>
-          </div>
+        {(() => {
+          const minPrice = product.markets.length > 0 ? Math.min(...product.markets.map(m => m.min)) : product.today;
+          const maxPrice = product.markets.length > 0 ? Math.max(...product.markets.map(m => m.max)) : product.today;
+          const avgPrice = product.today;
 
-          <div className="rounded-xl border-2 border-green-500 bg-green-50 p-4">
-            <p className="text-xs text-green-700 mb-1 font-medium">আজ</p>
-            <p className="text-xl font-bold text-green-700">
-              {product.today} টাকা
-            </p>
-            <p className="text-xs text-green-600 mt-1">আজকের বাজার দর</p>
-          </div>
+          return (
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="rounded-xl border border-gray-100 p-4">
+                <p className="text-xs text-gray-500 mb-1">সর্বনিম্ন দাম</p>
+                <p className="text-xl font-bold text-green-700">
+                  {minPrice} টাকা
+                </p>
+                <p className="text-xs text-gray-400 mt-1">সবচেয়ে কম দামের বাজার</p>
+              </div>
 
-          <div className="rounded-xl border border-gray-100 p-4">
-            <p className="text-xs text-gray-500 mb-1">গত সপ্তাহ</p>
-            <p className="text-xl font-bold text-gray-900">
-              {product.lastWeek} টাকা
-            </p>
-            <p className="text-xs text-gray-400 mt-1">৭ দিন আগের দাম</p>
-          </div>
-        </div>
+              <div className="rounded-xl border border-gray-100 p-4">
+                <p className="text-xs text-gray-500 mb-1">সর্বাধিক দাম</p>
+                <p className="text-xl font-bold text-red-600">
+                  {maxPrice} টাকা
+                </p>
+                <p className="text-xs text-gray-400 mt-1">সবচেয়ে বেশি দামের বাজার</p>
+              </div>
+
+              <div className="rounded-xl border border-gray-100 p-4">
+                <p className="text-xs text-gray-500 mb-1">গড় দাম</p>
+                <p className="text-xl font-bold text-green-700">
+                  {avgPrice} টাকা
+                </p>
+                <p className="text-xs text-gray-400 mt-1">প্রতি {product.unit}-এর হিসাবে</p>
+              </div>
+            </div>
+          );
+        })()}
       </div>
 
       

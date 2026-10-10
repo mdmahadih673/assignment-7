@@ -16,7 +16,7 @@ export default function CategoryGrid({ products }: { products: Iproduct[] }) {
 
     return (
         <div className="space-y-6">
-            {/* সর্ট বার */}
+             
             <div className="flex items-center justify-between rounded-xl border border-gray-100 bg-white px-4 py-3 shadow-sm">
                 <span className="text-sm text-gray-600">সাজান</span>
                 <select
