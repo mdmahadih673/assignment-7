@@ -8,22 +8,17 @@ import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
 
 const SignInPage = () => {
+    const router = useRouter();
+
     const handleSocialSignIn = async (provider: "google" | "github") => {
         const { error } = await signIn.social({
             provider,
-            callbackURL: '/',
-        })
+            callbackURL: "/profile",
+        });
         if (error) {
             toast.error(error.message);
-        } else {
-
-            toast.success(`${name} সাইন আপ সফল হয়েছে`);
-            router.push("/sign-in");
         }
-    }
-    const router = useRouter();
-
-
+    };
 
     const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -34,6 +29,7 @@ const SignInPage = () => {
         const { data: response, error } = await signIn.email({
             email: String(data.email),
             password: String(data.password),
+            callbackURL: "/profile",
         });
 
         if (error) {
@@ -42,7 +38,8 @@ const SignInPage = () => {
         }
 
         toast.success(`${response.user.name} সাইন ইন সফল হয়েছে`);
-
+        router.push("/profile");
+        router.refresh();
 
     };
     return (
